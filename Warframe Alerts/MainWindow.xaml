@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warframe_Alerts"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" AllowsTransparency="True" Background="#bb000000" Height="400" Width="600" WindowStyle="None">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <ListBox x:Name="FeedList" ItemsSource="{Binding FeedList}" HorizontalContentAlignment="Stretch" Margin="10,5" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <Grid Margin="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Title}" Margin="3" Grid.Column="0" Foreground="{Binding Brush}"/>
+                    <TextBlock Text="{Binding TimeLeft}" Margin="3" Grid.Column="1" Foreground="{Binding Brush}"/>
+                </Grid>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
 </Window>
