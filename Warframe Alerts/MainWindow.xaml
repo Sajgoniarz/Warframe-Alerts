@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warframe_Alerts"
         mc:Ignorable="d"
-        Title="MainWindow" AllowsTransparency="True" Background="#bb000000" Height="400" Width="600" WindowStyle="None">
+        Title="MainWindow" AllowsTransparency="True" Background="#bb000000" Height="400" Width="600" WindowStyle="None" MouseDown="Window_MouseDown" ResizeMode="CanResizeWithGrip">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
-    <ListBox x:Name="FeedList" ItemsSource="{Binding FeedList}" HorizontalContentAlignment="Stretch" Margin="10,5" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+    <ListBox x:Name="FeedList" ItemsSource="{Binding FeedList}" HorizontalContentAlignment="Stretch" Margin="10,5" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <ListBox.ItemTemplate>
             <DataTemplate>
                 <Grid Margin="2">

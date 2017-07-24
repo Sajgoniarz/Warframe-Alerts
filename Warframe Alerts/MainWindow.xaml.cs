@@ -26,5 +26,13 @@ namespace Warframe_Alerts
         {
             InitializeComponent();
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+            if (e.ChangedButton == MouseButton.Right)
+                App.Current.Shutdown();
+        }
     }
 }

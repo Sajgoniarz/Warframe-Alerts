@@ -30,5 +30,6 @@ namespace Warframe_Alerts
             rssManager = new WarframeAlertRSSManager();
             FeedList = rssManager.FeedList;
         }
+
     }
 }
